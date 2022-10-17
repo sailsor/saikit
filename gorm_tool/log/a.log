@@ -1,0 +1,59 @@
+2022-10-17 21:52:44.631203	info	[mysql] app_db init success
+2022-10-17 21:52:44.67186	info	[mysql] app_db_slave init success
+2022-10-17 21:54:15.122985	info	[mysql] app_db init success
+2022-10-17 21:54:15.163333	info	[mysql] app_db_slave init success
+2022-10-17 21:54:32.863133	info	[mysql] app_db init success
+2022-10-17 21:54:32.944116	info	[mysql] app_db_slave init success
+2022-10-17 21:56:59.395717	info	[mysql] app_db init success
+2022-10-17 21:56:59.479125	info	[mysql] app_db_slave init success
+2022-10-17 21:58:25.167642	info	[mysql] app_db init success
+2022-10-17 21:58:25.240178	info	[mysql] app_db_slave init success
+2022-10-17 22:00:38.29999	info	[mysql] app_db init success
+2022-10-17 22:00:38.375801	info	[mysql] app_db_slave init success
+2022-10-17 22:00:57.226935	info	[mysql] app_db init success
+2022-10-17 22:00:57.302167	info	[mysql] app_db_slave init success
+2022-10-17 22:00:57.338008	debug	35.52ms [1] SELECT * FROM `user_inf` LIMIT 1	{"caller": "gorm_tool/demo_test.go:30"}
+2022-10-17 22:01:07.454338	info	[mysql] app_db init success
+2022-10-17 22:01:07.515707	info	[mysql] app_db_slave init success
+2022-10-17 22:01:07.544664	debug	28.06ms [1] SELECT * FROM `user_inf` LIMIT 1	{"caller": "gorm_tool/demo_test.go:30"}
+2022-10-17 22:02:09.709452	INFO	[mysql] app_db init success
+2022-10-17 22:02:09.78699	INFO	[mysql] app_db_slave init success
+2022-10-17 22:02:09.811996	DEBUG	24.22ms [1] SELECT * FROM `user_inf` LIMIT 1	{"caller": "gorm_tool/demo_test.go:30"}
+2022-10-17 22:02:17.159642	info	[mysql] app_db init success
+2022-10-17 22:02:17.21991	info	[mysql] app_db_slave init success
+2022-10-17 22:02:17.244856	debug	24.47ms [1] SELECT * FROM `user_inf` LIMIT 1	{"caller": "gorm_tool/demo_test.go:30"}
+2022-10-17 22:02:22.273088	info	[mysql] app_db init success
+2022-10-17 22:02:22.338066	info	[mysql] app_db_slave init success
+2022-10-17 22:02:22.363623	debug	25.22ms [1] SELECT * FROM `user_inf` LIMIT 1	{"caller": "gorm_tool/demo_test.go:30"}
+2022-10-17 22:06:28.338213	debug	28.15ms [1] SELECT * FROM `user_inf` LIMIT 1	{"caller": "gorm_tool/demo_test.go:30"}
+2022-10-17 22:07:29.811537	debug	hello	{"caller": "undefined"}
+2022-10-17 22:07:39.714707	debug	hello	{"caller": "undefined"}
+2022-10-17 22:07:39.785148	info	[mysql] app_db init success
+2022-10-17 22:07:39.856982	info	[mysql] app_db_slave init success
+2022-10-17 22:07:46.352957	debug	hello	{"caller": "undefined"}
+2022-10-17 22:07:46.422497	info	[mysql] app_db init success
+2022-10-17 22:07:46.483813	info	[mysql] app_db_slave init success
+2022-10-17 22:07:46.513983	debug	23.54ms [1] SELECT * FROM `user_inf` LIMIT 1	{"caller": "gorm_tool/demo_test.go:32"}
+2022-10-17 22:08:03.919991	debug	hello	{"caller": "undefined"}
+2022-10-17 22:08:03.984419	info	[mysql] app_db init success
+2022-10-17 22:08:04.055209	info	[mysql] app_db_slave init success
+2022-10-17 22:08:10.801356	DEBUG	hello	{"caller": "undefined"}
+2022-10-17 22:08:10.858818	INFO	[mysql] app_db init success
+2022-10-17 22:08:10.928688	INFO	[mysql] app_db_slave init success
+2022-10-17 22:08:24.67052	DEBUG	hello	{"caller": "undefined"}
+2022-10-17 22:08:24.742521	INFO	[mysql] app_db init success
+2022-10-17 22:08:24.813087	INFO	[mysql] app_db_slave init success
+2022-10-17 22:08:24.843451	DEBUG	26.65ms [1] SELECT * FROM `user_inf` LIMIT 1	{"caller": "gorm_tool/demo_test.go:32"}
+2022-10-17 22:12:21.642235	ERROR	[db] app_db not found	{"caller": "mysql/mysql.go:179"}
+2022-10-17 22:12:37.444967	ERROR	[db] app_db not found	{"caller": "mysql/mysql.go:179"}
+2022-10-17 22:13:11.359256	ERROR	[db] bat not found	{"caller": "mysql/mysql.go:179"}
+2022-10-17 22:15:16.867084	ERROR	[db] bat not found	{"caller": "mysql/mysql.go:179"}
+2022-10-17 22:15:16.867683	ERROR	db is nil
+2022-10-17 22:16:00.346605	ERROR	[db] bat not found	{"caller": "mysql/mysql.go:179"}
+2022-10-17 22:16:00.347114	ERROR	db is nil
+2022-10-17 22:17:19.295311	ERROR	[db] bat not found	{"caller": "mysql/mysql.go:179"}
+2022-10-17 22:17:19.295986	ERROR	db is nil
+2022-10-17 22:18:01.604668	INFO	[mysql] bat init success
+2022-10-17 22:18:34.523616	INFO	[mysql] bat init success
+2022-10-17 22:19:08.720492	INFO	[mysql] bat init success
+2022-10-17 22:21:25.908271	INFO	[mysql] bat init success
