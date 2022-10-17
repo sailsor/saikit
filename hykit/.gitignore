@@ -1,0 +1,6 @@
+.idea
+esim
+/tool/protoc/helloworld/helloworld.proto
+/test/
+/go.sum
+/go.sum

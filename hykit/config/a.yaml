@@ -1,0 +1,26 @@
+name: esim
+
+# log配置参考
+#log_output: both  # 日志位置，file 文件|both 文件和终端|stdout 终端
+#log_file: /Users/hy/logs/esim.log   # 文件地址，建议写绝对路径
+#log_level: INFO   # 日志等级  panic|fatal|error|warn|info|debug
+#log_format: json  # 日志格式  json|text
+#log_report_caller: true  # 是否显示文件:行号
+#log_stack_trace: false  # 是否打印堆栈
+## 日志切割
+#log_max_size: 2   # 单个文件最大size
+#log_max_age: 1   # 保留旧文件的最大天数
+#log_backup_count: 5  # 保留旧文件的最大个数
+#log_compress: true  # 是否压缩/归档旧文件
+
+redis_max_active: 50
+redis_max_idle: 100
+redis_idle_time_out: 600
+redis_host: 192.168.3.154
+redis_port: 6379
+redis_password: ""
+
+# 微信报警 配置样例
+wx_web_hook: 
+wx_retries: 3
+wx_interval: 3
