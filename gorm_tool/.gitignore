@@ -1,0 +1,14 @@
+admin_endpoint
+lastupdate.tmp
+*.tar.gz
+.com.apple*
+.idea
+*.svg
+*.zip
+.DS_Store
+conf
+*.log
+/a_sett
+/conf
+*.yaml
+*.yml
