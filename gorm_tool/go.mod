@@ -2,7 +2,11 @@ module gorm_tool
 
 go 1.18
 
-require code.jshyjdtech.com/godev/hykit v1.1.7
+require (
+	code.jshyjdtech.com/godev/hykit v1.1.7
+	github.com/tealeg/xlsx v1.0.5
+	gorm.io/gorm v1.23.5
+)
 
 require (
 	github.com/beorn7/perks v1.0.1 // indirect
@@ -44,5 +48,4 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 	gorm.io/driver/mysql v1.3.3 // indirect
-	gorm.io/gorm v1.23.5 // indirect
 )

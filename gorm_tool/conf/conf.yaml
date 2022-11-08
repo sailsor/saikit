@@ -5,6 +5,8 @@ dbs:
       maxidle: 10, maxopen: 100, maxlifetime: 10 }
   - { db: 'app_db_slave', dsn: 'goesim:goesim@12345678@tcp(rm-bp11vuqb6wz9476nbym.mysql.rds.aliyuncs.com:3306)/test_db?charset=utf8&parseTime=True&loc=Local',
       maxidle: 10, maxopen: 100, maxlifetime: 10 }
+  - { db: 'test_admin_mgm_db', dsn: 'cd_mgm_data:AppUn!@69834@tcp(127.0.0.1:9100)/admin_mgm_db?charset=utf8&parseTime=True&loc=Local',
+      maxidle: 10, maxopen: 100, maxlifetime: 10 }
 
 
 

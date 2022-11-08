@@ -6,6 +6,7 @@ import (
 	"context"
 	"gorm.io/gorm"
 	"gorm_tool/internal"
+	"gorm_tool/utils"
 	"testing"
 )
 
@@ -67,4 +68,19 @@ func TestNewClientWithDbConfig(t *testing.T) {
 		return
 	}
 	db.Table("user_inf").Select("*").Limit(1).Find(&UserInf{})
+}
+
+func TestLogger(t *testing.T) {
+	utils.InitGlobalLogger()
+	logger := utils.GlobalLogger
+	logger.Infof("hello")
+}
+
+func TestCreatXlsx(t *testing.T) {
+	utils.InitGlobalLogger()
+	logger := utils.GlobalLogger
+	logger.Infof("hello")
+
+	ctx := context.Background()
+	utils.WriteHighRiskIpToFile(ctx, []string{"123", "456"})
 }
