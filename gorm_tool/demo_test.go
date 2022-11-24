@@ -40,6 +40,10 @@ type UserInf struct {
 	Age    int64
 }
 
+func (u *UserInf) TableName() string {
+	return "user_inf"
+}
+
 var (
 	test1Config = mysql.DbConfig{
 		Db:      "bat",
@@ -68,6 +72,21 @@ func TestNewClientWithDbConfig(t *testing.T) {
 		return
 	}
 	db.Table("user_inf").Select("*").Limit(1).Find(&UserInf{})
+
+	user := &UserInf{
+		Name:   "小智",
+		Salary: "20K",
+		Age:    27,
+	}
+
+	err := db.Table(user.TableName()).Create(user).Error
+	if err != nil {
+		esim.Logger.Errorf("Create err %s", err)
+		return
+	}
+
+	esim.Logger.Infof("新增主键[%v]", user.Id)
+
 }
 
 func TestLogger(t *testing.T) {
