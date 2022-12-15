@@ -3,9 +3,12 @@ package application
 import (
 	"code.jshyjdtech.com/godev/hykit/pkg/security"
 	"context"
+	"database/sql"
 	"github.com/pkg/errors"
+	"notify/internal/domain/entity"
 	"notify/internal/infra"
 	"notify/internal/transports/http/dto"
+	"time"
 )
 
 /*
@@ -96,4 +99,26 @@ func BuildHashHex(ctx context.Context, algo int, data []byte) ([]byte, error) {
 func BuildSm3Hex(ctx context.Context, data []byte) ([]byte, error) {
 
 	return security.EncodeHex(security.Sm3hash(data)), nil
+}
+
+func (cb *UnionJsCallbackSvc) Record(ctx context.Context) error {
+	logger := cb.Logger
+	logger.Infoc(ctx, "Record:开始调用；")
+
+	tblNotifyItem := new(entity.TblNotifyItem)
+	tblNotifyItem.AppId = cb.UnNotify.AcqInsCode
+	tblNotifyItem.OrderId = cb.UnNotify.OrderId
+	tblNotifyItem.TradeId = cb.UnNotify.UnionOrderId
+	tblNotifyItem.TranTime = time.Now().Format("2006-01-02 15:04:05")
+
+	tx := cb.Infra.DB.GetDb("appdb").Begin(&sql.TxOptions{})
+	defer tx.Rollback()
+	err := tx.Create(tblNotifyItem).Error
+	if err != nil {
+		logger.Errorc(ctx, "数据库插入失败[%s]", err)
+	}
+	tx.Commit()
+
+	logger.Infoc(ctx, "Record:结束调用；")
+	return nil
 }

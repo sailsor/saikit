@@ -13,10 +13,12 @@ import (
 // Injectors from wire.go:
 
 func initInfra(esim *container.Esim, grpc2 *grpc.Client) *Infra {
-	client := provideRedis(esim)
+	client := provideDb(esim)
+	redisClient := provideRedis(esim)
 	infra := &Infra{
 		Esim:        esim,
-		RedisClient: client,
+		DB:          client,
+		RedisClient: redisClient,
 	}
 	return infra
 }

@@ -1,6 +1,9 @@
 package infra
 
 import (
+	"code.jshyjdtech.com/godev/hykit/log"
+	"code.jshyjdtech.com/godev/hykit/mysql"
+	"gorm.io/gorm"
 	"sync"
 
 	"code.jshyjdtech.com/godev/hykit/redis"
@@ -24,12 +27,15 @@ var (
 type Infra struct {
 	*container.Esim
 
+	DB *mysql.Client
+
 	RedisClient *redis.Client
 }
 
 //nolint:deadcode,unused,varcheck
 var infraSet = wire.NewSet(
 	wire.Struct(new(Infra), "*"),
+	provideDb,
 	provideRedis,
 )
 
@@ -54,6 +60,23 @@ func NewStubsInfra(grpcClient *grpc.Client) *Infra {
 // Close close the infra when app stop
 func (infraer *Infra) Close() {
 	// infraer.DB.Close()
+}
+
+func provideDb(esim *container.Esim) *mysql.Client {
+	clientOptions := mysql.ClientOptions{}
+	logger := log.NewGormLogger(
+		log.WithGLogEsimZap(esim.Z),
+	)
+
+	mysqlClient := mysql.NewClient(
+		clientOptions.WithConf(esim.Conf),
+		clientOptions.WithLogger(esim.Logger),
+		clientOptions.WithGormConfig(&gorm.Config{
+			Logger: logger,
+		}),
+	)
+
+	return mysqlClient
 }
 
 func provideGrpcClient(esim *container.Esim) *grpc.Client {

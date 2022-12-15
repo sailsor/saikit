@@ -59,6 +59,47 @@ func (cb *CallbackController) UnionJSCallback(c *gin.Context) {
 	return
 }
 
+func (cb *CallbackController) UnionJSCallbackWith502(c *gin.Context) {
+	logger := cb.Logger
+	var (
+		err error
+		req = new(dto.UnionNotify)
+		ctx = c.Request.Context()
+	)
+
+	encoding := c.PostForm("encoding")
+	logger.Infof("encoding: [%s]", encoding)
+
+	err = c.Request.ParseForm()
+	if err != nil {
+		logger.Errorc(ctx, "UnionJSCallback:ParseForm 解析参数失败[%s]", err)
+		response.FailWithMessage(c, fmt.Sprintf("ParseForm error:[%s]", err))
+		return
+	}
+
+	var postForm strings.Builder
+	postForm.WriteString("打印Form域:\n")
+
+	for k, v := range c.Request.PostForm {
+		postForm.WriteString(fmt.Sprintf("Field[%s]=[%s]\n", k, v[0]))
+	}
+	logger.Infoc(ctx, postForm.String())
+
+	err = c.ShouldBind(req)
+	if err != nil {
+		logger.Errorf("ShouldBind失败[%s]", err)
+	}
+
+	cb.UnApp.UnNotify = req
+	err = cb.UnApp.Record(ctx)
+	if err != nil {
+		logger.Errorf("%s", err)
+	}
+
+	c.String(http.StatusBadGateway, "")
+	return
+}
+
 func (cb *CallbackController) Notify(c *gin.Context) {
 	logger := cb.Logger
 	ctx := context.Background()
