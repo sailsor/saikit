@@ -13,7 +13,7 @@ dbs:
 # log配置参考
 log_output: both  # 日志位置，file 文件|both 文件和终端|stdout 终端
 log_file: ./log/a.log   # 文件地址，建议写绝对路径
-log_level: DEBUG   # 日志等级  panic|fatal|error|warn|info|debug
+log_level: info   # 日志等级  panic|fatal|error|warn|info|debug
 log_format: text  # 日志格式  json|text
 log_report_caller: false  # 是否显示文件:行号
 log_stack_trace: false  # 是否打印堆栈
