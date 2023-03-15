@@ -17,7 +17,7 @@ func TestReadIpFile(t *testing.T) {
 	logger := utils.GlobalLogger
 	ctx := context.Background()
 	filePath := "C:\\Users\\sai\\Documents\\银联\\公网安全组"
-	fileName := "sg-0nqjzive(本地行业服务平台测试安全组).xlsx"
+	fileName := "高危攻击IP0309.xlsx"
 
 	list, err := utils.ReadUnionXlsxFile(ctx, filePath, fileName)
 	if err != nil {
@@ -73,7 +73,7 @@ func TestQueryHighRiskIp(t *testing.T) {
 
 	logger := utils.GlobalLogger
 	ctx := context.Background()
-	pathname := "C:\\Users\\sai\\Documents\\银联\\高危ip"
+	pathname := "C:\\Users\\sai\\Documents\\银联\\高危ip\\now"
 
 	logger.Infoc(ctx, "开始测试....")
 

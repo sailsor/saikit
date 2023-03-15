@@ -53,6 +53,8 @@ func QueryHighRiskIp(ctx context.Context, ipFiles []string) error {
 			logger.Errorf("ReadHighRiskFile err: %s", err)
 			return err
 		}
+		logger.Infof("查询ip有%v个", len(list))
+		logger.Infof("查询ip列表为%v", list)
 
 		for _, ip := range list {
 			ipInfo := new(dbm.TblUnionGroupIp)
