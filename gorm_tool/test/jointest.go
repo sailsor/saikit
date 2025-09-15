@@ -37,6 +37,8 @@ type TradeInfo struct {
 
 	// 交易金额
 	TranAmt string `json:"tranAmt" gorm:"column:tran_amt"`
+
+	TestApp string `json:"testApp" gorm:"column:test_app"`
 }
 
 func main() {
