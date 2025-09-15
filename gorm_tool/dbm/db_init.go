@@ -7,7 +7,11 @@ import (
 	"gorm_tool/internal"
 )
 
-var db_client *mysql.Client
+var dbClient *mysql.Client
+
+func init() {
+	InitDB()
+}
 
 func InitDB() {
 	app := internal.NewApp()
@@ -17,7 +21,7 @@ func InitDB() {
 	gormLogger := log.NewGormLogger(
 		log.WithGLogEsimZap(esim.Z),
 	)
-	db_client = mysql.NewClient(
+	dbClient = mysql.NewClient(
 		clientOptions.WithConf(esim.Conf),
 		clientOptions.WithLogger(esim.Logger),
 		clientOptions.WithGormConfig(&gorm.Config{
@@ -28,9 +32,9 @@ func InitDB() {
 }
 
 func GetDBClient() *mysql.Client {
-	return db_client
+	return dbClient
 }
 
 func CloseDB() {
-	db_client.Close()
+	dbClient.Close()
 }

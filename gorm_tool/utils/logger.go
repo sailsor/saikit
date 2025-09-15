@@ -7,6 +7,10 @@ import (
 
 var GlobalLogger log.Logger
 
+func init() {
+	InitGlobalLogger()
+}
+
 func InitGlobalLogger() {
 	app := internal.NewApp()
 	GlobalLogger = app.Logger
